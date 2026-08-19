@@ -1,0 +1,30 @@
+@import "../../common.css";
+
+@keyframes fadeToBlack {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-to-black {
+  animation-name: fadeToBlack;
+  animation-duration: 0.75s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.interactiveCard-wrapper {
+  height: 74px;
+}
+
+.interactiveCard-base {
+  height: 62px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  justify-content: center;
+  background-color: #80ffffff;
+}

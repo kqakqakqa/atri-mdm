@@ -1,0 +1,10 @@
+@import "../../common.css";
+
+.interactiveCard-wrapper {
+  height: 98px;
+}
+
+.interactiveCard-base {
+  height: 86px;
+  background-color: #80ffffff;
+}

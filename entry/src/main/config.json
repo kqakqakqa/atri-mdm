@@ -1,10 +1,10 @@
 {
   "app": {
-    "bundleName": "com.github.kqakqakqa.hmlitewearable._empty",
+    "bundleName": "com.atri_mdm.port.hmlite",
     "vendor": "kqakqakqa",
     "version": {
-      "code": 1,
-      "name": "0.1.0"
+      "code": 15,
+      "name": "0.15.0"
     }
   },
   "deviceConfig": {},
@@ -28,7 +28,13 @@
     "js": [
       {
         "pages": [
-          "pages/index/index"
+          "pages/init/init",
+          "pages/router/router",
+          "pages/home/home",
+          "pages/progressSave/progressSave",
+          "pages/momentScene/momentScene",
+          "pages/settings/settings",
+          "pages/about/about"
         ],
         "name": "default"
       }

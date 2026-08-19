@@ -1,0 +1,116 @@
+<stack on:swipe="swipeHandler" style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px;">
+
+  <!-- bg base -->
+  <image style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px; object-fit: cover;"
+    src="/common/momentplay_res/bg-base.png">
+  </image>
+
+  <list ref="bindRotation"
+    style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px; background-color: transparent;">
+
+    <list-item style="width: 0px; height: {{uiSizes.topMargin}}px; background-color: transparent;"></list-item>
+
+    <!-- title -->
+    <list-item
+      style="width: {{uiSizes.screenWidth}}px; height: 60px; justify-content: center; align-items: center; background-color: transparent;">
+      <stack style="width: {{uiSizes.uiWidth}}px; height: 48px;">
+        <text class="text-38px" style="color: #557799; left: 2px; top: 2px; letter-spacing: 2px;">
+          {{mode === "save" ? "SAVE" : "LOAD"}}
+        </text>
+        <text class="text-38px" style="letter-spacing: 2px;">
+          {{mode === "save" ? "SAVE" : "LOAD"}}
+        </text>
+      </stack>
+    </list-item>
+
+    <!-- NEW button (仅LOAD模式显示) -->
+    <list-item if="{{mode !== 'save'}}" class="interactiveCard-wrapper"
+      style="width: {{uiSizes.screenWidth}}px; height: 74px;">
+      <div class="interactiveCard-base" style="width: {{uiSizes.uiWidth}}px;" on:click="onNewClick">
+        <stack style="width: {{uiSizes.uiWidth}}px; height: 38px;">
+          <text class="text-30px" style="left: 26px; top: 2px; width: {{uiSizes.uiWidth}}px; color: #557799;">NEW</text>
+          <text class="text-30px" style="left: 24px; width: {{uiSizes.uiWidth}}px; color: #ddeeff;">NEW</text>
+        </stack>
+      </div>
+    </list-item>
+
+    <!-- slot cards -->
+    <list-item for="{{slots}}"
+      style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.uiWidth * 9/16 + 120}}px; justify-content: center; background-color: transparent;">
+      <stack on:click="onSlotClick($idx)" on:longpress="onSlotLongPress($idx)"
+        style="width: {{uiSizes.uiWidth}}px; height: {{uiSizes.uiWidth * 9/16 + 108}}px; flex-direction: column; background-color: #80ffffff; border-radius: 24px;">
+
+        <!-- image -->
+        <image
+          style="width: {{uiSizes.uiWidth}}px; height: {{uiSizes.uiWidth * 9/16}}px; object-fit: fill; border-radius: 24px; background-color: #80ffffff;"
+          src="{{'/common/momentplay_res/bgimage/' + $item.bg + '.png'}}">
+        </image>
+
+        <!-- dialog -->
+        <text class="text-30px"
+          style="left: 14px; top: {{uiSizes.uiWidth * 9/16 - 89}}px; width: {{uiSizes.uiWidth - 24}}px; height: 91px; color: black; text-overflow: ellipsis;">{{$item.text}}</text>
+        <text class="text-30px"
+          style="left: 12px; top: {{uiSizes.uiWidth * 9/16 - 91}}px; width: {{uiSizes.uiWidth - 24}}px; height: 91px; text-overflow: ellipsis;">{{$item.text}}</text>
+
+        <!-- slot -->
+        <text class="text-30px"
+          style="left: 14px; top: {{uiSizes.uiWidth * 9/16 + 14}}px; color: #557799;">{{$item.label}}</text>
+        <text class="text-30px" style="left: 12px; top: {{uiSizes.uiWidth * 9/16 + 12}}px;">{{$item.label}}</text>
+
+        <!-- time -->
+        <text class="text-30px"
+          style="left: 14px; top: {{uiSizes.uiWidth * 9/16 + 56}}px; color: #557799;">{{$item.time}}</text>
+        <text class="text-30px" style="left: 12px; top: {{uiSizes.uiWidth * 9/16 + 54}}px;">{{$item.time}}</text>
+
+      </stack>
+    </list-item>
+
+    <list-item style="width: 0px; height: {{uiSizes.topMargin - 12}}px; background-color: transparent;"></list-item>
+
+  </list>
+
+  <!-- 保存成功气泡通知 -->
+  <div if="{{showBubble}}"
+    style="width: {{uiSizes.uiWidth}}px; left: {{uiSizes.leftMargin}}px; top: {{uiSizes.screenHeight - uiSizes.topMargin - 62}}px; background-color: #e6222222; border-radius: 24px; justify-content: center; align-items: center; height: 62px; padding-top: 12px; padding-bottom: 12px;">
+    <text class="text-30px">已保存</text>
+  </div>
+
+  <!-- 删除确认弹窗 -->
+  <div on:click="nullFn" if="{{showDeleteDialog}}"
+    style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px; background-color: #e6222222; justify-content: center; align-items: center;">
+    <div
+      style="width: {{uiSizes.uiWidth}}px; height: {{uiSizes.screenHeight}}px; flex-direction: column; justify-content: center; align-items: center;">
+
+      <stack style="width: {{uiSizes.uiWidth}}px; height: 62px;">
+        <text class="text-30px"
+          style="width: {{uiSizes.uiWidth}}px; left: 2px; top: 2px; color: #557799; text-align: center;">确定要删除吗？</text>
+        <text class="text-30px" style="width: {{uiSizes.uiWidth}}px; text-align: center;">确定要删除吗？</text>
+      </stack>
+
+      <div class="interactiveCard-wrapper" style="width: {{uiSizes.screenWidth}}px;">
+        <stack on:click="cancelDelete" class="interactiveCard-row interactiveCard-base"
+          style="width: {{uiSizes.uiWidth}}px;">
+          <text class="text-30px"
+            style="width: {{uiSizes.uiWidth}}px; left: 2px; top: 2px; color: #557799; text-align: center;">取消</text>
+          <text class="text-30px" style="width: {{uiSizes.uiWidth}}px; color: #ddeeff; text-align: center;">取消</text>
+        </stack>
+      </div>
+
+      <div class="interactiveCard-wrapper" style="width: {{uiSizes.screenWidth}}px;">
+        <stack on:click="confirmDelete" class="interactiveCard-row interactiveCard-base"
+          style="width: {{uiSizes.uiWidth}}px;">
+          <text class="text-30px"
+            style="width: {{uiSizes.uiWidth}}px; left: 2px; top: 2px; color: #557799; text-align: center;">删除</text>
+          <text class="text-30px" style="width: {{uiSizes.uiWidth}}px; color: #ddeeff; text-align: center;">删除</text>
+        </stack>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- fade-to-black mask -->
+  <div if="{{showFadeMask}}" class="fade-to-black"
+    style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px; animation-name: {{showFadeMask ? 'fadeToBlack' : ''}}; background-color: {{showFadeMask ? '#ff000000' : '#00000000'}};">
+  </div>
+
+</stack>

@@ -1,2 +1,2 @@
-rootProject.name = '_empty'
+rootProject.name = 'atri-mdm'
 include ':entry'

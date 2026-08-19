@@ -1,0 +1,49 @@
+<stack on:swipe="swipeBack" style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px;">
+
+  <!-- bg base -->
+  <image style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px; object-fit: cover;"
+    src="/common/momentplay_res/bg-base.png">
+  </image>
+
+  <list ref="bindRotation"
+    style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px; background-color: transparent;">
+
+    <list-item style="width: 0px; height: {{uiSizes.topMargin}}px; background-color: transparent;"></list-item>
+
+    <!-- title -->
+    <list-item
+      style="width: {{uiSizes.screenWidth}}px; height: 60px; justify-content: center; align-items: center; background-color: transparent;">
+      <stack style="width: {{uiSizes.uiWidth}}px; height: 48px;">
+        <text class="text-38px" style="color: #557799; left: 2px; top: 2px; letter-spacing: 2px;">SETTINGS</text>
+        <text class="text-38px" style="letter-spacing: 2px;">SETTINGS</text>
+      </stack>
+    </list-item>
+
+    <!-- 屏幕常亮 -->
+    <list-item class="interactiveCard-wrapper" style="width: {{uiSizes.screenWidth}}px;">
+      <div on:click="toggleKeepScreenOn" class="interactiveCard-base" style="width: {{uiSizes.uiWidth}}px;">
+        <stack style="width: {{uiSizes.uiWidth}}px; height: 38px;">
+          <text class="text-30px" style="color: #557799; left: 26px; top: 2px;">屏幕常亮</text>
+          <text class="text-30px" style="left: 24px; top: 0px;">屏幕常亮</text>
+          <text class="text-30px" style="color: #557799; left: {{uiSizes.uiWidth - 52}}px; top: 2px;">{{keepScreenOn ? "开" : "关"}}</text>
+          <text class="text-30px" style="left: {{uiSizes.uiWidth - 54}}px; top: 0px; color: #ddeeff;">{{keepScreenOn ? "开" : "关"}}</text>
+        </stack>
+      </div>
+    </list-item>
+
+    <!-- 文字弹出动效 -->
+    <list-item class="interactiveCard-wrapper" style="width: {{uiSizes.screenWidth}}px;">
+      <div on:click="toggleTextAnimation" class="interactiveCard-base" style="width: {{uiSizes.uiWidth}}px;">
+        <stack style="width: {{uiSizes.uiWidth}}px; height: 38px;">
+          <text class="text-30px" style="color: #557799; left: 26px; top: 2px;">文字弹出动效</text>
+          <text class="text-30px" style="left: 24px; top: 0px;">文字弹出动效</text>
+          <text class="text-30px" style="color: #557799; left: {{uiSizes.uiWidth - 52}}px; top: 2px;">{{textAnimation ? "开" : "关"}}</text>
+          <text class="text-30px" style="left: {{uiSizes.uiWidth - 54}}px; top: 0px; color: #ddeeff;">{{textAnimation ? "开" : "关"}}</text>
+        </stack>
+      </div>
+    </list-item>
+
+    <list-item style="width: 0px; height: {{uiSizes.topMargin - 12}}px; background-color: transparent;"></list-item>
+
+  </list>
+</stack>

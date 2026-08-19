@@ -1,0 +1,64 @@
+<stack on:swipe="swipeBack" style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px;">
+
+  <image style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px; object-fit: cover;"
+    src="/common/momentplay_res/bg-base.png">
+  </image>
+
+  <list ref="bindRotation"
+    style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px; background-color: transparent;">
+
+    <list-item style="width: 0px; height: {{uiSizes.topMargin}}px; background-color: transparent;"></list-item>
+
+    <list-item class="title" style="width: {{uiSizes.screenWidth}}px;">
+      <stack style="width: {{uiSizes.uiWidth}}px; height: 48px;">
+        <text class="text-38px title-shadow">ABOUT</text>
+        <text class="text-38px title-text">ABOUT</text>
+      </stack>
+    </list-item>
+
+    <list-item class="port-wrapper" style="width: {{uiSizes.screenWidth}}px; height: 213px;">
+      <image class="port-icon" style="width: 114px; height: 114px; margin-bottom: 12px;"
+        src="/common/momentplay_res/icon.png">
+      </image>
+      <stack class="port-text-wrapper" style="width: {{uiSizes.screenWidth}}px; height: 79px;">
+        <text class="text-30px port-text-shadow" style="width: {{uiSizes.screenWidth}}px; height: 79px; text-align: center;">ATRI -My Dear Moments-\n移植 by kqakqakqa</text>
+        <text class="text-30px port-text" style="width: {{uiSizes.screenWidth}}px; height: 79px; text-align: center;">ATRI -My Dear Moments-\n移植 by kqakqakqa</text>
+      </stack>
+    </list-item>
+
+    <!-- The PNG is converted manually from res/momentplay-powered.svg. -->
+    <list-item class="card-wrapper" style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.uiWidth * 9 / 16 + 12}}px;">
+      <image class="engine-image" style="width: {{uiSizes.uiWidth}}px; height: {{(uiSizes.uiWidth) * 9 / 16}}px;"
+        src="/common/momentplay_res/about/momentplay-powered.png">
+      </image>
+    </list-item>
+
+    <list-item class="copyright-wrapper" style="width: {{uiSizes.screenWidth}}px; height: {{(uiSizes.uiWidth - 24) * 446 / 336 + 62}}px;">
+      <div class="copyright-card" style="width: {{uiSizes.uiWidth}}px; height: {{(uiSizes.uiWidth - 24) * 446 / 336 + 50}}px;">
+        <stack class="copyright-title-wrapper" style="width: {{uiSizes.uiWidth - 24}}px; height: 38px;">
+          <text class="text-30px copyright-title-shadow" style="width: {{uiSizes.uiWidth - 24}}px; text-align: center;">COPYRIGHT</text>
+          <text class="text-30px copyright-title" style="width: {{uiSizes.uiWidth - 24}}px; text-align: center;">COPYRIGHT</text>
+        </stack>
+        <image class="card-image" style="width: {{uiSizes.uiWidth - 24}}px; height: {{(uiSizes.uiWidth - 24) * 446 / 336}}px;"
+          src="/common/momentplay_res/about/brandlogo-merged.png">
+        </image>
+      </div>
+    </list-item>
+
+    <list-item class="warning-wrapper" style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.uiWidth * 9 / 16 + 12}}px;">
+      <image class="warning-image" style="width: {{uiSizes.uiWidth}}px; height: {{uiSizes.uiWidth * 9 / 16}}px;"
+        src="/common/momentplay_res/about/warning2_cn.png">
+      </image>
+    </list-item>
+
+    <list-item class="thanks-wrapper" style="width: {{uiSizes.screenWidth}}px; height: 79px;">
+      <stack class="thanks-text-wrapper" style="width: {{uiSizes.screenWidth}}px; height: 79px;">
+        <text class="text-30px thanks-text-shadow" style="width: {{uiSizes.screenWidth}}px; text-align: center;">鸣谢：感谢 gm 提供的\n灵感和技能支持</text>
+        <text class="text-30px thanks-text" style="width: {{uiSizes.screenWidth}}px; text-align: center;">鸣谢：感谢 gm 提供的\n灵感和技能支持</text>
+      </stack>
+    </list-item>
+
+    <list-item style="width: 0px; height: {{uiSizes.topMargin - 12}}px; background-color: transparent;"></list-item>
+
+  </list>
+</stack>

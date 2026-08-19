@@ -1,0 +1,113 @@
+@import "../../common.css";
+
+.title {
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.title-text {
+  top: 0px;
+  letter-spacing: 2px;
+}
+
+.title-shadow {
+  color: #557799;
+  left: 2px;
+  top: 2px;
+  letter-spacing: 2px;
+}
+
+.port-wrapper {
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+}
+
+.port-text {
+  color: #ffffff;
+  text-align: center;
+}
+
+.port-text-shadow {
+  left: 2px;
+  top: 2px;
+  color: #557799;
+  text-align: center;
+}
+
+.card-wrapper {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+
+.engine-image {
+  border-radius: 24px;
+  background-color: #80ffffff;
+}
+
+.copyright-wrapper {
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+}
+
+.copyright-card {
+  padding-top: 12px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 24px;
+  background-color: #80ffffff;
+}
+
+.copyright-title {
+  top: 0px;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.copyright-title-shadow {
+  left: 2px;
+  top: 2px;
+  color: #557799;
+  letter-spacing: 2px;
+}
+
+.warning-wrapper {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+
+.card-image {
+  object-fit: contain;
+}
+
+.warning-image {
+  object-fit: contain;
+  border-radius: 24px;
+}
+
+.thanks-wrapper {
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.thanks-text {
+  height: 79px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.thanks-text-shadow {
+  left: 2px;
+  top: 2px;
+  height: 79px;
+  color: #557799;
+  text-align: center;
+}

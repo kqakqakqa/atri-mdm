@@ -1,0 +1,55 @@
+@import "../../common.css";
+
+@keyframes slide-bg-left-to-right {
+  from {
+    transform: translateX(0px);
+  }
+
+  to {
+    transform: translateX(362px);
+  }
+}
+
+@keyframes slide-bg-right-to-left {
+  from {
+    transform: translateX(0px);
+  }
+
+  to {
+    transform: translateX(-362px);
+  }
+}
+
+.slide-bg {
+  animation-duration: 30s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.interactiveCard-wrapper {
+  height: 74px;
+}
+
+.interactiveCard-base {
+  height: 62px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  justify-content: center;
+  background-color: #80ffffff;
+}
+
+
+
+.menu-btn-text {
+  left: 24px;
+  top: 0px;
+  color: #336699;
+  letter-spacing: 2px;
+}
+
+.menu-btn-text-shadow {
+  left: 26px;
+  top: 2px;
+  color: #99ccff;
+  letter-spacing: 2px;
+}

@@ -12,3 +12,7 @@
 /.clangd
 /.clang-format
 /.clang-tidy
+/entry/src/main/js/default/common/momentplay_res
+/entry/src/main/resources/rawfile/momentplay_res
+/entry/src/main/resources/base/media/icon.png
+/entry/src/main/resources/base/media/icon_small.png

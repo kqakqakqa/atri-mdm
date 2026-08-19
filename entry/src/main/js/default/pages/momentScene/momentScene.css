@@ -1,0 +1,43 @@
+@import "../../common.css";
+
+.text-shadow {
+  left: 2px;
+  top: 2px;
+  color: black;
+}
+
+.interactiveCard-wrapper {
+  height: 74px;
+}
+
+.interactiveCard-base {
+  height: 62px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  justify-content: center;
+  background-color: #80ffffff;
+}
+
+.roundBtn {
+  width: 60px;
+  height: 38px;
+  border-radius: 38px;
+  background-color: #22ffffff;
+}
+
+@keyframes fadeToEnd {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-to-end {
+  animation-name: fadeToEnd;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}

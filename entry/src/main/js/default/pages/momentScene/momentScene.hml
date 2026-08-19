@@ -1,0 +1,120 @@
+<stack on:swipe="swipeHandler" style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px;">
+
+  <!-- bg base -->
+  <image style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px; object-fit: cover;"
+    src="/common/momentplay_res/bg-base.png">
+  </image>
+
+  <!-- bg base mask -->
+  <image style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px; object-fit: fill;"
+    src="/common/bg-base-mask.png">
+  </image>
+
+  <!-- bg moment -->
+  <image
+    style="left: {{(uiSizes.screenWidth - 466) / 2}}px; width: 466px; height: 480px; top: {{(uiSizes.screenHeight - 480) / 2}}px; object-fit: contain;"
+    src="{{'/common/momentplay_res/bgimage/' + moment.bg + '.png'}}">
+  </image>
+
+  <!-- fg body -->
+  <image for="{{moment.showCharacters}}"
+    style="left: {{($idx + 1) * uiSizes.screenWidth / (moment.showCharacters.length + 1) - 151}}px; top: {{(uiSizes.screenHeight - 460) / 2}}px; width: 302px; height: 460px;"
+    src="{{'/common/momentplay_res/fgimage/' + $item.bodyImg + '.png'}}">
+  </image>
+
+  <!-- fg face -->
+  <image for="{{moment.showCharacters}}"
+    style="left: {{($idx + 1) * uiSizes.screenWidth / (moment.showCharacters.length + 1) - 151}}px; top: {{(uiSizes.screenHeight - 460) / 2}}px; width: 302px; height: 460px;"
+    src="{{'/common/momentplay_res/fgimage/' + $item.faceImg + '.png'}}">
+  </image>
+
+  <!-- dialog -->
+  <stack
+    style="top: {{uiSizes.screenHeight / 2}}px; width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight / 2}}px; background-color: transparent;">
+
+    <!-- dialog character -->
+    <text class="text-30px text-shadow"
+      style="width: {{uiSizes.uiWidth}}px; padding-left: {{uiSizes.leftMargin}}px;">{{moment.dialogCharacter}}</text>
+    <text class="text-30px"
+      style="width: {{uiSizes.uiWidth}}px; padding-left: {{uiSizes.leftMargin}}px;">{{moment.dialogCharacter}}</text>
+
+    <!-- dialog text -->
+    <list on:click="advance" if="{{moment.type === 'dialog'}}" ref="bindRotation"
+      style="top: 40px; width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight / 2 - 40}}px; background-color: #44336699;">
+      <list-item
+        style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight * (moment.dialog.length > 30 ? 1 : 1/2) - 40}}px; justify-content: center; padding-top: 2px;">
+        <stack
+          style="width: {{uiSizes.uiWidth}}px; height: {{uiSizes.screenHeight * (moment.dialog.length > 30 ? 1 : 1/2) - 40}}px;">
+          <text class="text-shadow" style="width: {{uiSizes.uiWidth}}px; font-size: 30px;">{{dialogDisplay}}</text>
+          <text style="width: {{uiSizes.uiWidth}}px; font-size: 30px;">{{dialogDisplay}}</text>
+        </stack>
+      </list-item>
+    </list>
+
+    <div if="{{moment.type === 'choice'}}"
+      style="left: {{uiSizes.leftMargin}}px; width: {{uiSizes.uiWidth}}px; height: {{uiSizes.screenHeight / 2}}px; flex-direction: column; background-color: transparent;">
+      <div for="{{moment.choices}}" class="interactiveCard-wrapper"
+        style="width: {{uiSizes.uiWidth}}px; height: 74px; margin-bottom: 8px;" on:click="choose($idx)">
+        <stack class="interactiveCard-base"
+          style="width: {{uiSizes.uiWidth}}px; height: 62px; padding-top: 12px; padding-bottom: 12px; justify-content: center; background-color: #80ffffff;">
+          <text class="text-30px"
+            style="width: {{uiSizes.uiWidth}}px; left: 2px; top: 2px; color: #557799; text-align: center;">{{$item}}</text>
+          <text class="text-30px"
+            style="width: {{uiSizes.uiWidth}}px; color: #ddeeff; text-align: center;">{{$item}}</text>
+        </stack>
+      </div>
+    </div>
+
+  </stack>
+
+  <!-- pause button -->
+  <div on:click="togglePause" class="roundBtn"
+    style="top: {{uiSizes.topMargin}}px; left: {{(uiSizes.screenWidth - 60) / 2}}px; width: 60px; height: 38px;">
+    <text class="text-30px" style="color: #ffffff;">···</text>
+  </div>
+
+  <!-- pause overlay -->
+  <div on:click="nullFn" if="{{isPaused}}"
+    style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px; background-color: #e6222222; justify-content: center; align-items: center;">
+    <div
+      style="width: {{uiSizes.uiWidth}}px; height: {{uiSizes.screenHeight}}px; flex-direction: column; justify-content: center; align-items: center;">
+
+      <!-- QUIT card -->
+      <div class="interactiveCard-wrapper" style="width: {{uiSizes.screenWidth}}px;">
+        <stack on:click="quitToHome" class="interactiveCard-row interactiveCard-base"
+          style="width: {{uiSizes.uiWidth}}px;">
+          <text class="text-30px"
+            style="width: {{uiSizes.uiWidth}}px; left: 2px; top: 2px; color: #557799; text-align: center;">QUIT</text>
+          <text class="text-30px" style="width: {{uiSizes.uiWidth}}px; color: #ddeeff; text-align: center;">QUIT</text>
+        </stack>
+      </div>
+
+      <!-- SAVE card -->
+      <div class="interactiveCard-wrapper" style="width: {{uiSizes.screenWidth}}px;">
+        <stack on:click="goSave" class="interactiveCard-row interactiveCard-base" style="width: {{uiSizes.uiWidth}}px;">
+          <text class="text-30px"
+            style="width: {{uiSizes.uiWidth}}px; left: 2px; top: 2px; color: #557799; text-align: center;">SAVE</text>
+          <text class="text-30px" style="width: {{uiSizes.uiWidth}}px; color: #ddeeff; text-align: center;">SAVE</text>
+        </stack>
+      </div>
+
+      <!-- SETTINGS card -->
+      <div class="interactiveCard-wrapper" style="width: {{uiSizes.screenWidth}}px;">
+        <stack on:click="goSettings" class="interactiveCard-row interactiveCard-base"
+          style="width: {{uiSizes.uiWidth}}px;">
+          <text class="text-30px"
+            style="width: {{uiSizes.uiWidth}}px; left: 2px; top: 2px; color: #557799; text-align: center;">SETTINGS</text>
+          <text class="text-30px"
+            style="width: {{uiSizes.uiWidth}}px; color: #ddeeff; text-align: center;">SETTINGS</text>
+        </stack>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- exec 调用 atEnd(string) 时，按参数颜色执行淡出并返回首页 -->
+  <div if="{{showEndMask}}" class="fade-to-end"
+    style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px; animation-name: {{isEndFading ? 'fadeToEnd' : ''}}; background-color: {{endMaskColor}};">
+  </div>
+
+</stack>

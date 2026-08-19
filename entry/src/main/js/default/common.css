@@ -1,0 +1,125 @@
+/* 单行 ×1.25, 换行 ×1.375 */
+.text-30px {
+  /* 单行 37.5px, 换行 41.25px */
+  height: 38px;
+  font-size: 30px;
+}
+
+.text-38px {
+  /* 单行 47.5px, 换行 52.25px */
+  height: 48px;
+  font-size: 38px;
+}
+
+.text-gray {
+  color: gray;
+}
+
+.timeBatteryWrapper {
+  align-items: flex-end;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.timeBatteryStr {
+  width: 276px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.title-text {
+  top: 12px;
+}
+
+.roundBtn {
+  width: 72px;
+  height: 72px;
+  border-radius: 72px;
+  align-items: center;
+  justify-content: center;
+  background-color: #22ffffff;
+}
+
+.interactiveCard-wrapper {
+  /* 默认 1行 */
+  width: 100%;
+  height: 98px;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+}
+
+.interactiveCard-base {
+  /* 默认 1行 */
+  width: 100%;
+  height: 86px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  flex-direction: column;
+  background-color: #22ffffff;
+  border-radius: 24px;
+}
+
+.interactiveCard-row {
+  /* 默认 1行 */
+  width: 100%;
+  height: 38px;
+  /* 默认 分散 */
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background-color: transparent;
+}
+
+.interactiveCard-rowGap {
+  margin-top: 48px;
+}
+
+.interactiveCard-textRowGap {
+  margin-top: 4px;
+}
+
+.interactiveCard-rowText {
+  margin-left: 24px;
+}
+
+.interactiveCard-actionIcon {
+  /* 默认 30px */
+  width: 30px;
+  height: 30px;
+  margin-right: 24px;
+}
+
+.optionList {
+  padding-left: 24px;
+  padding-right: 24px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: transparent;
+}
+
+.option-wrapper {
+  width: 132px;
+  height: 84px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  border-width: 3px;
+  background-color: transparent;
+}
+
+.option {
+  width: 120px;
+  height: 72px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background-color: #11ffffff;
+}
+
+.option-roundBtn {
+  margin-left: 12px;
+  background-color: #11ffffff;
+}

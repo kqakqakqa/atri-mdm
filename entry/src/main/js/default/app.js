@@ -1,8 +1,23 @@
+const imports = {};
+
 export default {
-  onCreate() {
-    console.info("Application onCreate");
+
+  onCreate: () => {
+    console.info("app.js onCreate");
   },
-  onDestroy() {
-    console.info("Application onDestroy");
-  }
+
+  onDestroy: () => {
+    console.info("app.js onDestroy");
+  },
+
+  setImports: o => {
+    for (const k in o) {
+      imports[k] = o[k];
+    }
+  },
+
+  getImports: () => {
+    return imports;
+  },
+
 };

@@ -1,0 +1,62 @@
+<stack on:swipe="swipeHandler" style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px;">
+
+  <!-- bg base -->
+  <image style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px; object-fit: cover;"
+    src="/common/momentplay_res/bg-base.png">
+  </image>
+
+  <image class="slide-bg"
+    style="left: {{uiSizes.screenWidth / 2 - uiSizes.screenHeight * 853 / 480 / 2 + 181}}px; width: {{uiSizes.screenHeight * 853 / 480}}px; height: {{uiSizes.screenHeight}}px; animation-name: {{slideAnimName}};"
+    src="/common/momentplay_res/bg-homepage.png">
+  </image>
+
+  <list ref="bindRotation"
+    style="width: {{uiSizes.screenWidth}}px; height: {{uiSizes.screenHeight}}px; background-color: transparent;">
+
+    <list-item style="width: 0px; height: {{uiSizes.topMargin}}px; background-color: transparent;"></list-item>
+
+    <list-item
+      style="width: {{uiSizes.screenWidth}}px; height: 133px; justify-content: center; align-items: center; background-color: transparent;">
+      <image style="width: 276px; height: 121px;" src="/common/momentplay_res/logo.png"></image>
+    </list-item>
+
+    <list-item if="{{showTrueEnd}}" class="interactiveCard-wrapper" style="width: {{uiSizes.screenWidth}}px;">
+      <div class="interactiveCard-base" style="width: {{uiSizes.uiWidth}}px;" on:click="goTrueEnd">
+        <stack style="width: {{uiSizes.uiWidth}}px; height: 38px;">
+          <text class="text-30px menu-btn-text-shadow">TRUE END</text>
+          <text class="text-30px menu-btn-text">TRUE END</text>
+        </stack>
+      </div>
+    </list-item>
+
+    <list-item class="interactiveCard-wrapper" style="width: {{uiSizes.screenWidth}}px;">
+      <div class="interactiveCard-base" style="width: {{uiSizes.uiWidth}}px;" on:click="goPlay">
+        <stack style="width: {{uiSizes.uiWidth}}px; height: 38px;">
+          <text class="text-30px menu-btn-text-shadow">PLAY</text>
+          <text class="text-30px menu-btn-text">PLAY</text>
+        </stack>
+      </div>
+    </list-item>
+
+    <list-item class="interactiveCard-wrapper" style="width: {{uiSizes.screenWidth}}px;">
+      <div class="interactiveCard-base" style="width: {{uiSizes.uiWidth}}px;" on:click="goSettings">
+        <stack style="width: {{uiSizes.uiWidth}}px; height: 38px;">
+          <text class="text-30px menu-btn-text-shadow">SETTINGS</text>
+          <text class="text-30px menu-btn-text">SETTINGS</text>
+        </stack>
+      </div>
+    </list-item>
+
+    <list-item class="interactiveCard-wrapper" style="width: {{uiSizes.screenWidth}}px;">
+      <div class="interactiveCard-base" style="width: {{uiSizes.uiWidth}}px;" on:click="goAbout">
+        <stack style="width: {{uiSizes.uiWidth}}px; height: 38px;">
+          <text class="text-30px menu-btn-text-shadow">ABOUT</text>
+          <text class="text-30px menu-btn-text">ABOUT</text>
+        </stack>
+      </div>
+    </list-item>
+
+    <list-item style="width: 0px; height: {{uiSizes.topMargin - 12}}px; background-color: transparent;"></list-item>
+
+  </list>
+</stack>
